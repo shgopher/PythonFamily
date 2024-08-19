@@ -9,7 +9,7 @@
  * Copyright (c) 2024 by shgopher, All Rights Reserved. 
 -->
 # PythonFamily
-python 知识体系，包括Python基础，Python AI， Python 爬虫，Python 脚本，Python 数据分析
+python 知识体系，包括 Python 基础，Python AI，Python 爬虫，Python 脚本，Python 数据分析
 
 - [快速入门 Python](./HelloPython.md)
 - [通过例子学习 Python](./learn-python-by-examples.py)
