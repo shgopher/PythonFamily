@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-19 19:07:43
+LastEditTime: 2024-08-20 23:51:36
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -29,7 +29,7 @@ h = {'name':'shgopher','age':18} # map
 
 print(a,b,c,d,e,f,g,h,'\n')
 
-# 类型转换
+# 3. 类型转换
 ## 隐性转化
 j = 1
 i = 1.0
@@ -81,7 +81,7 @@ print("将列表 [7, 7, 8, 8, 9] 转换为集合：", set_data)
 ### 此处示例将两个列表组合成字典
 keys = ['a', 'b', 'c']
 values = [1, 2, 3]
-dict_data = dict(zip(keys, values))
+dict_data = dict(zip(keys, values)) # zip 是将list 组合成元组
 print("将两个列表组合成字典：", dict_data)
 
 ### chr 转换
@@ -122,4 +122,10 @@ print("将列表 [1, 2, 3] 转换为字符串表示：", repr_str)
 ### type 转换
 num = 5
 print("5 的数据类型：", type(num))
+
+# 4. 运算符
+## 4.1 算术运算符
+a = 10
+b = 5
+print(a + b,a-b,a*b,a/b,a%b,a**b,a//b)
 

@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-19 19:02:40
+ * @LastEditTime: 2024-08-20 23:50:05
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -49,7 +49,7 @@ c = a+b #  2.0 b 阴性转化为1.0
 
 |函数|描述|
 |:---:|:---:|
-|int(x [,base])|将 x 转化为 int 类型|
+|int(x [,base])|将 x 转化为 int 类型，（例如：8不能转化为二进制，会报错）|
 |float(x)|将 x 转化为 float 类型|
 |complex(real [,imag])|将 real 和 imag 转化为 complex 类型|
 |str(x)|将 x 转化为 str 类型|
@@ -66,3 +66,21 @@ c = a+b #  2.0 b 阴性转化为1.0
 |eval(x)|将 x 转化为表达式类型|
 |repr(x)|将 x 转化为字符串类型|
 |type(x)|将 x 转化为类型类型|
+
+## 运算符
+### 算术运算符
+- \+ 加
+- \- 减
+- \* 乘
+- / 除
+- % 取模
+- ** 幂
+- // 取整除 2//3 = 0； -9//2 = -5 (这个注意，往小的方向取整数，所以是-5 不是-4)
+### 比较运算符
+
+### 赋值运算符
+### 位运算符
+### 逻辑运算符
+### 成员运算符
+### 身份运算符
+###
