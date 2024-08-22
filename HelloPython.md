@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-20 23:50:05
+ * @LastEditTime: 2024-08-22 17:49:29
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -77,10 +77,28 @@ c = a+b #  2.0 b 阴性转化为1.0
 - ** 幂
 - // 取整除 2//3 = 0； -9//2 = -5 (这个注意，往小的方向取整数，所以是-5 不是-4)
 ### 比较运算符
-
+- \==
+- \!=
+- \>
+- \<
+- \>=
+- \<=
 ### 赋值运算符
+- \= 赋值
+- \+=
+- \-=
+- \*=
+- /=
+- %=
+- \**=
+- \//= 去整
+- \:= 海象运算符 (跟 go 的:= 不是一个概念)(用法：if (n := 1) > 1：)
 ### 位运算符
+
 ### 逻辑运算符
+
 ### 成员运算符
+
 ### 身份运算符
+
 ###

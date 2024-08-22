@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-20 23:51:36
+LastEditTime: 2024-08-22 17:51:03
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -128,4 +128,20 @@ print("5 的数据类型：", type(num))
 a = 10
 b = 5
 print(a + b,a-b,a*b,a/b,a%b,a**b,a//b)
+## 4.2 比较运算符
+print(a==b,a!=b,a>b,a<b,a>=b,a<=b)
+## 4.3 赋值运算符
+a = 10
+a += 5
+a -= 5
+a *= 5
+a /= 5
+a %= 5
+a **= 5
+a //= 5
+
+if (a:= 10)> 5:
+    print(a)
+
+## 4.4 位运算符
 
