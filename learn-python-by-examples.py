@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-22 17:51:03
+LastEditTime: 2024-08-24 23:06:10
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -144,4 +144,48 @@ if (a:= 10)> 5:
     print(a)
 
 ## 4.4 位运算符
+a = 10
+b = 5
+print(a & b,a | b,a ^ b,~a,a << b,a >> b)
+## 4.5 逻辑运算符
+a = True
+b = False
+print(a and b,a or b,not a)
+## 4.6 成员运算符
+a = [1,2,3]
+print(1 in a,1 not in a)
+## 4.7 身份运算符
+a = [1,2,3]
+b = [1,2,3]
+print(a is b,a is not b)
+c = [1,2,3]
+d = c
+print(c is d)
+## 5.数字类型 number
+
+## 6.字符串 string
+
+## 7.列表 list
+
+## 8.元组 tuple
+## 9.字典 dict
+## 10.集合 set
+## 11.条件语句
+## 12.循环语句
+## 13.推导式
+## 14.迭代器
+## 15.生成器
+## 16.函数
+## 17.lambda
+## 18.装饰器
+## 19.模块
+## 20.异常处理
+## 21.面向对象编程
+## 22.命名空间
+## 23.作用域
+## 24.输入输出
+## 25.file
+## 26.os
+## 27.并发编程
+
 

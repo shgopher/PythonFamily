@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-22 17:49:29
+ * @LastEditTime: 2024-08-24 23:04:42
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -94,11 +94,48 @@ c = a+b #  2.0 b 阴性转化为1.0
 - \//= 去整
 - \:= 海象运算符 (跟 go 的:= 不是一个概念)(用法：if (n := 1) > 1：)
 ### 位运算符
-
+- \& 位与
+- \| 位或
+- \^ 位异或
+- \~ 位取反
+-\<< 左移
+- \>> 右移
 ### 逻辑运算符
+有一说一，Python 这种用法挺奇怪的，其它的都是 && || ！
+
+- and
+- or
+- not
 
 ### 成员运算符
-
+- in：x in y，如果 x 在 y 中，返回 True
+- not in：x not in y，如果 x 不在 y 中，返回 True
 ### 身份运算符
+Python 拥有引用类型的，所以有时候需要判断两个变量是不是引用同一个对象，这时候可以用 is 运算符
 
-###
+- is：x is y，如果 x 和 y 是引用的同一个对象，返回 True
+- is not：x is not y，如果 x 和 y 引用的不是同一个对象，返回 True
+## 数字类型 number
+## 字符串 string
+## 列表 list
+## 元组 tuple
+## 字典 dict
+## 集合 set
+## 条件语句
+## 循环语句
+## 推导式
+## 迭代器
+## 生成器
+## 函数
+## lambda
+## 装饰器
+## 模块
+## 异常处理
+## 面向对象编程
+## 命名空间
+## 作用域
+## 输入输出
+## file
+## os
+## 并发编程
+

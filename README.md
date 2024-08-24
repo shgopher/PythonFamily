@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:40:22
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-22 18:03:59
+ * @LastEditTime: 2024-08-23 19:18:36
  * @FilePath: /PythonFamily/README.md
  * @Description: 
  * 
@@ -14,9 +14,14 @@ python 知识体系，包括 Python 基础，Python web 开发，Python AI，Pyt
 - [快速入门 Python](./HelloPython.md)
 - [通过例子学习 Python](./learn-python-by-examples.py)
 
-## Python 脚本
 ## Python web 开发
-## Python 爬虫
-## Python AI
+
 ## Python 数据分析及其可视化
+
+## Python 脚本
+
+## Python 爬虫
+
+## Python AI
+
 
