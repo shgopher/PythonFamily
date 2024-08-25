@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-24 23:06:10
+LastEditTime: 2024-08-25 19:26:06
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -162,19 +162,59 @@ c = [1,2,3]
 d = c
 print(c is d)
 ## 5.数字类型 number
-
+a = 1
+b = 1.0
+c = 1+ 1j
+print(a,b,c) 
 ## 6.字符串 string
-
+a = "lixiang"
+print(f"{a}是第一个来的学生")
 ## 7.列表 list
+myList = [1,2,3,4]
 
+for i in myList:
+    print(i)
+
+print(myList[-1])
+myList.append(4)
+myList.insert(0,10)
+myList.pop()
+myList.remove(4)
+myList.sort()
+print(myList)
 ## 8.元组 tuple
+tup1 = (1,2,"3")
+tup2 = (11,22,23)
+for i in tup1:
+    print(i)
+    
+tup3 = tup1 + tup2
+
 ## 9.字典 dict
+dict1 = {"name":"shgopher","age":18}
+for i in dict1:
+    print(i)
+del dict1["name"]
+dict1.pop("age")
+print(dict1)
 ## 10.集合 set
+set1 = {1,2,3}
+set2 = set([1,2,3])
+for i in set1:
+    print(i)
+
+set3 = set1.add(set2)
+print(set3)
 ## 11.条件语句
+
 ## 12.循环语句
+
 ## 13.推导式
+
 ## 14.迭代器
+
 ## 15.生成器
+
 ## 16.函数
 ## 17.lambda
 ## 18.装饰器

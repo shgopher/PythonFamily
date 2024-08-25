@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-25 18:39:36
+ * @LastEditTime: 2024-08-25 19:22:05
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -158,12 +158,116 @@ list1[0:2] // 切片
 使用 append 向后添加数据 `list1.append(1)`
 
 使用 del 删除元素 `del list1[0]` // 删除第一个元素
+
+比较 list，也就是比较 list 的元素是否相同
+```py
+import operator
+if operator.eq(list1,[1,1.0,true,"1.0"]):
+  print("相等")
+  else:
+    print("不相等")
+```
+### 运算符
+- len() 返回 list 长度
+- value = list1 + list2 // list 拼接
+- value = list1 * 2 // list 重复
+- in：判断 list 中是否包含某个元素
+### list 内置函数
+- len() 返回列表长度
+- max() 返回 list 的最大值
+- min() 返回 list 的最小值
+- list() 将 tuppple 转化为 list
+### 内置方法
+- list.append(obj) 在某个 list 后面添加元素
+- list.count(obj) 返回 obj 在 list 中出现的次数
+- list.extend(seq) 在列表末尾一次性追加另一个序列中的多个值 (用新列表扩展原来的列表)
+- list.index() 返回指定元素在列表中的位置，如果没有该元素，则返回-1
+- list.insert() 在指定位置插入元素
+- list.pop() 删除指定位置的元素，并返回该元素，默认是删除最后一个元素
+- list.remove(obj) 删除指定元素，删除第一个匹配的元素，如果元素不存在，则抛出异常
+- list.reverse() 列表反转
+- list.sort() 列表排序
+- list.clear() 清空列表
+- list.copy() 复制列表
 ## 元组 tuple
+tuple 是不可改变的 list
 
+元组跟 list 不同，它后面是小括号 tup1 = (1,1.0,true，“1.0”)
+
+tuple 是不可变的，不能修改，所以不能使用 append，但是可以切片，所以可以用来判断是否相等
+
+元组只有一个元素的时候要加上逗号 `tup1 = (1,)` 不然 Python 会认为后面是一个 number 类型
+
+当索引元组的时候，跟 list 相同也是 tup1[0] 即可，也是中括号
+
+元组无法更改，但是两个元组可以加在一起生成一个新的元组 `tup3 = tup1 + tup2`
+
+元组中的元素无法被删除，不过可以使用 del 去删除整个元组 `del tup1`
+### 运算符
+- len() 返回元组长度
+- value = tup1 + tup2 // 元组拼接
+- value = tup1 * 2 // 元组重复
+- in：判断元组中是否包含某个元素
+### 内置函数
+- len() 返回元组长度
+- max() 返回元组中的最大值
+- min() 返回元组中的最小值
+- tuple() 将 list 转化为 tuple
 ## 字典 dict
+dict1 = {1：“1”，2：“2”}
 
+等同于其它编程语言中的 map
+
+可使用字面量创建：
+```py
+dict1 = {1:"1","2":"2"} // dict 的key可以不是同一个类型的
+```
+也可以使用关键字 dict 创建字典
+
+```py
+dict1 = dict()
+```
+也是使用中括号访问 key 的 value 值 `dict1[1]` 同样的方法修改值 `dict1[1] = "2"`
+
+使用 del 删除 dict 中的元素或者 dict 本身 `del dict1[1]` `del dict1`
+
+使用 dict.clear() 来讲字典清空
+
+dict 的 key 要求是唯一的，不能重复，并且可比较的，不能是变化的，所以应该使用数字，字符串，或者元组，使用 list 不行，因为 list 可，使用另一个 dict 当做 key 也不行，因为 dict 可变
+
+### 内置函数
+- len() 返回 dict 长度
+- str() 返回 dict 的字符串表示
+- type() 返回 dict 的类型
+### 内置方法
+- dict.clear() 清空 dict
+- dict.copy() 复制 dict
+- dict.fromkeys() 创建一个新字典，以序列 seq 中元素做字典的键，val 为字典所有键对应的初始值
+- dict.get() 返回指定键的值，如果值不在字典中返回默认值
+- key in dict 判断 dict 中是否有 key
+- dict.items() 返回 dict 的键值对组成的列表
+- dict.keys() 返回 dict 的键的列表
+- dict.setdefault() 如果指定键的值不在字典中，将会添加键值对
+- dict.update(dict2) 把字典 dict2 的键/值对更新到 dict 里
+- dict.values() 返回 dict 的值的列表
+- pop() 返回指定键的值，并删除该键值对
+- popitem() 返回并删除字典中的最后一对键值对
 ## 集合 set
+一个无序不重复元素序列，可以理解为 dict 的 key
 
+`set1 = {1,1.0,true,"1.0"} ` 看到了吧，是大括号，不是 list 的中括号也不是元组的小括号
+
+也可以使用 set 的方式从 list 中创建 set `set1 = set([1,1.0,true,"1.0"])`
+
+## 内置方法
+- s.add(obj) 向集合中添加元素
+- s.update(seq) 更新集合，添加 seq 中的元素，seq 为列表，元组，字典，set
+- s.remove(obj) 删除指定元素，如果元素不存在，则抛出异常
+- s.discard(obj) 删除指定元素，如果元素不存在，则不抛出异常
+- s.pop() 删除并返回集合中的随机一个元素，如果集合为空，则抛出异常
+- len() 返回集合长度
+- s.clear() 清空集合
+- x in s 判断元素是否在集合中
 ## 条件语句
 
 ## 循环语句
