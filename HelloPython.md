@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-25 19:22:05
+ * @LastEditTime: 2024-08-26 00:39:13
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -269,9 +269,63 @@ dict 的 key 要求是唯一的，不能重复，并且可比较的，不能是�
 - s.clear() 清空集合
 - x in s 判断元素是否在集合中
 ## 条件语句
+### if
+```py
+if condition:
+    do something
+elif condition:
+    do something
+else:
+    do something
+```
+```py
+a = 12
+if a > 10:
+    print("a > 10")
+elif a < 10:
+    print("a < 10")
+else:
+    print("a == 10")
+```
+### match
+这个 match 其实就是其它编程语言中的 switch
+```py
+match a:
+    case 1:
+        print("a == 1") 
+        break
+    case 2:
+        print("a == 2")
+        break
+    case _:
+        print("a != 1 and a != 2")
+```
 
 ## 循环语句
+### while
+python 中的 while 跟 go 中的 for 是一个意思
 
+```py
+while condition:
+    do something
+```
+```py
+n = 100
+while n > 0:
+    print(n)
+    n -= 1 
+```
+### for-in
+Python 中的 for 循环实际上是 for range 的意思
+```py
+for i in range(10):
+    print(i)
+```
+```py
+a = "hello world"
+for i in a:
+    print(i)
+```
 ## 推导式
 
 ## 迭代器

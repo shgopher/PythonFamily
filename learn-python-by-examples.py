@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-25 19:26:06
+LastEditTime: 2024-08-26 00:34:43
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -203,12 +203,35 @@ set2 = set([1,2,3])
 for i in set1:
     print(i)
 
-set3 = set1.add(set2)
-print(set3)
 ## 11.条件语句
+a = 12
+if a > 10:
+    print("a 大于 10")
+elif a < 10:
+    print("a 小于 10")
+else:
+    print("a 等于 10")
+b  = 10
+def myage(a):
+  match a :
+      case 10:
+          print("a 等于 10")
+      case 1:
+          print("a 等于 1")
+      case _:
+          print("a 不等于 10")
 
 ## 12.循环语句
+n = 100
+while n > 0:
+    print(n)
+    n -= 1 
 
+a = "hello world"
+
+for i in a:
+    print(i)
+    
 ## 13.推导式
 
 ## 14.迭代器
@@ -216,16 +239,27 @@ print(set3)
 ## 15.生成器
 
 ## 16.函数
+
 ## 17.lambda
+
 ## 18.装饰器
+
 ## 19.模块
+
 ## 20.异常处理
+
 ## 21.面向对象编程
+
 ## 22.命名空间
+
 ## 23.作用域
+
 ## 24.输入输出
+
 ## 25.file
+
 ## 26.os
+
 ## 27.并发编程
 
 
