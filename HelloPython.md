@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-24 23:04:42
+ * @LastEditTime: 2024-08-25 18:39:36
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -116,26 +116,85 @@ Python 拥有引用类型的，所以有时候需要判断两个变量是不是�
 - is：x is y，如果 x 和 y 是引用的同一个对象，返回 True
 - is not：x is not y，如果 x 和 y 引用的不是同一个对象，返回 True
 ## 数字类型 number
+- int
+- float
+- complex
 ## 字符串 string
+- string
+
+字符串是引用类型，支持下标访问，不支持更改
+
+字符串格式化 `print("这是%s" % a)`，不能使用逗号，逗号表示并列关系，所以要使用 `%`
+
+python 使用三引号表示可以换行的字符串
+```py
+nowStr = """
+你好
+
+你好
+"""
+```
+
+f-string
+
+格式化字符串以 f 开头，后面跟字符串，字符串表达式使用大括号
+
+```py
+x = 1
+print(f"这是{x+1}个")
+```
+使用 f-string 就不用判断是数字还是字符串了
 ## 列表 list
+可以理解为拥有不同类型的切片，Python 的 list 可以拥有的操作是索引，切片，加乘检查成员
+```py
+list1 = [1,1.0,true,"1.0"]
+
+list1[0] // 索引
+list1[-1] // 从后面索引
+list1[0:2] // 切片
+
+
+```
+使用 append 向后添加数据 `list1.append(1)`
+
+使用 del 删除元素 `del list1[0]` // 删除第一个元素
 ## 元组 tuple
+
 ## 字典 dict
+
 ## 集合 set
+
 ## 条件语句
+
 ## 循环语句
+
 ## 推导式
+
 ## 迭代器
+
 ## 生成器
+
 ## 函数
+
 ## lambda
+
 ## 装饰器
+
 ## 模块
+
 ## 异常处理
+
 ## 面向对象编程
+
 ## 命名空间
+
 ## 作用域
+
 ## 输入输出
+
 ## file
+
 ## os
+
 ## 并发编程
 
