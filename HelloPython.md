@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-26 00:39:13
+ * @LastEditTime: 2024-08-27 23:38:12
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -327,11 +327,81 @@ for i in a:
     print(i)
 ```
 ## 推导式
+推导式是一种类似 sql 的查询语句，用于快速生成列表
+### 列表 list 推导式
+```py
+a = [i for i in range(10)]
+print(a)
 
+hiList = ["hello", "world",2,3]
+b = [name.upper() for name in hiList if isinstance(name, str)] # [要生成的表达式 for 变量 in 序列 if 条件]
+print(b)
+```
+### 字典 dict 推导式
+```py
+hiDict = {"name": "hello", "age": 18}
+
+hiDict = {key: value for key, value in hiDict.items() if key == "name"}
+```
+### 集合 set 推导式
+```py
+setnew = {i**2 for i in (1,2,3)}
+```
+### 元组 tuple 推导式
+```py
+tupleNew = (i**2 for i in (1,2,3))
+```
 ## 迭代器
+使用内置函数 iter() 创建一个迭代器，使用 next() 获取下一个元素
 
+```py
+iterator = iter([1,2,3])
+
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+```
+然后我们可以发现内置的很多数据结构，比如 list set 这种，自动就实现了迭代器，比如 list.iter()，所以你可以使用 for in 的方式去遍历数据
+
+你会发现 Python 的 for 循环跟 go 很不一样，它不支持 for i:= 0；i< 10；i++ 这种写法，而是只支持 for in 这种遍历单一模式，py 的一般循环使用 while 循环，而且也不支持在 while 后面添加条件比如 while i < 10；i++ 这种写法
+
+```py
+list = [1,2,3,4,5]
+for i in iter(list):
+  print(i)
+```
+### 创建一个迭代器
+需要创建一个 class，并且实现 __iter__ 和 __next__ 方法
+```py
+class myNumber :
+  def __iter__(self): # 这个表示第一个数据
+    self.a = 1
+    return self
+  def __next__(self): # 这个表示后续每次调用next，都会返回的数据 
+    if x > 120:
+      raise StopIteration # 这表示跳出迭代器
+    x = self.a
+    self.a += 2
+    return x
+  
+myclass = myNumber()
+myiter = iter(myclass)
+for x in myiter:
+  print(x)
+```
 ## 生成器
-
+在 Python 中使用了 yield 的函数被称为生成器
+```py
+def number(n):
+  while n > 0:
+    yield n
+    n -=1
+g = number(10)
+print(next(g))
+for i in g:
+  print(i)
+```
+Python 中迭代器和生成器作用差不多，更推荐生成器，因为明显代码更简洁
 ## 函数
 
 ## lambda

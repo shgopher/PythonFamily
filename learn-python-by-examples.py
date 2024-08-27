@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-26 00:34:43
+LastEditTime: 2024-08-27 23:38:58
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -231,13 +231,72 @@ a = "hello world"
 
 for i in a:
     print(i)
-    
+
 ## 13.推导式
+### 13.1列表推导式
+hiList = ["hello", "world",1,2]
+hiList = [name.upper() for name in hiList if isinstance(name,str)]
+print(hiList)
+## 13.2字典推导式
+hiDict = {"name": "hello", "age": 18}
 
+hiDict = {key: value for key, value in hiDict.items() if key == "name"}
+print(hiDict)
+
+hiDict = ["hidd","dsd","sd","sddsd"]
+hiDict = {i: len(i) for i in hiDict}
+print(hiDict)
+### 13.3集合推导式
+hiSet = ["hidd","dsd","sd","sddsd"]
+hiSet = {i for i in hiSet}
+print(hiSet)
+### 13.4 元组推导式
+hiTuple = (i for i in range(1,10)) # 返回的是一个生成器，所以需要再处理成元组
+hiTuple = tuple(hiTuple) # 从生成器处理成元组
+print(hiTuple)
 ## 14.迭代器
+iterator = iter([1,2,3])
 
+print(next(iterator))
+print(next(iterator))
+print(next(iterator))
+# print(next(iterator)) ,如果迭代器已经迭代完，会报错
+
+list = [1,2,3,4,5]
+for i in iter(list):
+  print(i)
+
+li = [1,2,3,4,5]
+# print(next(list)) 这是错误用法，因为 li 并没有实现迭代器，所以不能使用next()方法
+for i in li: # 你会发现，不需要给定list这种内置数据迭代器，也可以使用 for in 这种range方法，但是不能使用 next()方法
+  print(i)
+
+class MyNumber :
+  def __iter__(self): # 这个表示第一个数据
+    self.a = 111
+    return self
+  def __next__(self): # 这个表示后续每次调用next，都会返回的数据 
+    x = self.a
+    self.a += 2
+    return x
+  
+myclass = MyNumber()
+myiter = iter(myclass)
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
+print(next(myiter))
 ## 15.生成器
-
+def number(n):
+  while n > 0:
+    yield n
+    n -=1
+g = number(10)
+print(next(g))
+print("---")
+for i in g:
+  print(i)
 ## 16.函数
 
 ## 17.lambda
