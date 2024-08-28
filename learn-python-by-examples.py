@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-27 23:38:58
+LastEditTime: 2024-08-28 23:32:45
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -298,9 +298,26 @@ print("---")
 for i in g:
   print(i)
 ## 16.函数
+def hello(name="hello"):
+  if name == "hello":
+    return "hello world" , 12
+  return -1
 
+print(hello("1"))
+
+def hi(*args):
+   for i in args:
+     print(i)
+
+hi("d","d","o","s")
+def hello(**kwargs):
+  for key, value in kwargs.items():
+    print(key, value)
+
+hello(a=1, b=2)
 ## 17.lambda
-
+c = lambda x: x + 1
+print(c(12))
 ## 18.装饰器
 
 ## 19.模块

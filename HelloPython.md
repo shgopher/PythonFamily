@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-27 23:38:12
+ * @LastEditTime: 2024-08-28 23:29:41
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -403,9 +403,53 @@ for i in g:
 ```
 Python 中迭代器和生成器作用差不多，更推荐生成器，因为明显代码更简洁
 ## 函数
+```py
+def hello(name):
+  if name == "hello":
+    return "hello world"
+  return -1
 
+print(hello("hello"))
+```
+可以看出来 Python 的形参根本就没有类型，有没有 return 值也看不出来，返回值也不用标注类型，你可以从这个案例看出来，返回一个字符串或者一个整数都可以，
+你可以把 Python 的类型看的很弱，Python 虽然有类型，但是代码中并不强调类型，如果用 go 来形容，返回的值其实就是 any
+
+py 跟 go 一样，可以返回多个返回值，只是 go 本身就支持多返回值，py 其实返回的是一个元组
+```py
+def hello(name = "hi"): # 这是默认参数的写法，跟其他编程语言一样
+  if name == "hello":
+    return "hello world" , 12
+  return -1
+
+print(hello("1"))
+```
+你会发现返回值可以个数不同，类型不同，反正是一个元组，py 对于类型要求真的非常宽泛
+
+不定长函数
+```py
+def hello(*args): # *args 表示不定长参数,其实就是一个元组，py中只要是多参数的默认都是元组而不是list
+  for i in args:
+    print(i)
+# 如果是俩🌟号，本质就变成了字典
+def hello(**kwargs):
+  for key, value in kwargs.items():
+    print(key, value)
+
+hello(a=1, b=2)
+```
+
+如果单独出现星号*，则星号*后的参数必须用 c = 3 的形式传入：
+
+```py
+def hello(a,b,*,c):
+
+f(1,2,c=3)
+```
 ## lambda
-
+```py
+x = lambda a,b : a + b + 10
+```
+语法就是 lambda 变量名：表达式，其中表达式自带 return 作用
 ## 装饰器
 
 ## 模块
