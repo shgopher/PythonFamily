@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-28 23:32:45
+LastEditTime: 2024-08-29 11:56:38
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -319,7 +319,17 @@ hello(a=1, b=2)
 c = lambda x: x + 1
 print(c(12))
 ## 18.装饰器
+def hello(name):
+  def inner():
+    print("hello", name)
+    name()
+    print("hi", name)
+  return inner 
+@hello
+def hi():
+  print("---")
 
+hi()
 ## 19.模块
 
 ## 20.异常处理

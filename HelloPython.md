@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-28 23:29:41
+ * @LastEditTime: 2024-08-29 11:46:11
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -451,7 +451,24 @@ x = lambda a,b : a + b + 10
 ```
 语法就是 lambda 变量名：表达式，其中表达式自带 return 作用
 ## 装饰器
+装饰器本质上是一个接收函数作为输入并返回一个新的包装过后的函数的对象。
 
+Python 装饰允许在不修改原有函数代码的基础上，动态地增加或修改函数的功能
+
+```py
+def hello(name):
+  def inner():
+    print("hello", name)
+    name()
+    print("hi", name)
+  return inner # 在装饰器函数中，return inner这一步是非常重要的
+
+@hello
+def hi():
+  print("---")
+
+hi()
+```
 ## 模块
 
 ## 异常处理
