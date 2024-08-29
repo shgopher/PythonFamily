@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-29 11:46:11
+ * @LastEditTime: 2024-08-29 17:48:03
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -469,7 +469,78 @@ def hi():
 
 hi()
 ```
+### 类装饰器
+```py
+class hello:
+  def __init__(self,func):
+    self.func = func
+  def __call__(self,name):
+    result  = self.func(name)
+    return result
+
+@hello
+hi()
+```
 ## 模块
+使用 import 导入模块 (包)
+
+使用 from xxx import xxx 引入部分模块
+
+### __init__。py
+它用于标识一个目录是一个 Python 包。当一个目录中包含了 __init__。py 文件时，这个目录就可以被 Python 视为一个包，可以被导入和使用。
+
+```py
+my_package/
+    __init__.py
+    module1.py
+    module2.py
+```
+### __main__。py
+当一个包中包含了 __main__。py 文件时，这个包可以直接作为一个可执行的脚本运行。
+
+```py
+my_package/ # 包my_package  拥有 module1 和 module2 模块，init文件会在调用包的实际自动执行，一般情况下直接导入包中的模块不会执行包的 __init__.py 文件，但在特定的代码逻辑下可能会间接导致其执行。
+    __init__.py
+    module1.py
+    module2.py
+    __main__.py
+```
+
+`__main__.py` 文件通常用作包的入口点，可以在这个文件中执行一些主要的逻辑或者启动应用程序
+### 包和模块
+模块 (Module)
+
+定义
+
+模块是一个包含 Python 定义和语句的文件。文件名就是模块名加上。py 后缀。
+例如，有一个文件名为 my_module.py，那么这个文件就是一个模块，模块名就是 my_module。
+
+作用
+
+模块可以将相关的代码组织在一起，实现代码的复用。例如，可以将一些常用的函数、类或变量定义在一个模块中，然后在其他程序中导入这个模块来使用这些定义。
+模块还可以帮助划分大型项目的代码结构，使得代码更易于维护和管理。
+
+导入和使用
+
+可以使用 import 语句导入一个模块。例如，import my_module 将导入名为 my_module 的模块。
+导入后，可以使用模块名加上点号 (。) 和要访问的对象名来使用模块中的内容。例如，my_module.some_function() 可以调用 my_module 模块中的 some_function 函数。
+二、包 (Package)
+
+定义
+
+包是一种组织模块的方式，它是一个包含 __init__。py 文件的目录。
+包可以包含多个模块和子包，形成一个层次化的结构。
+
+作用
+
+包可以将相关的模块组织在一起，形成一个更大的功能单元。例如，可以将一个大型项目按照功能划分成不同的包，每个包包含相关的模块。
+包有助于提高代码的可维护性和可扩展性，使得项目的结构更加清晰。
+
+导入和使用
+
+可以使用 import 语句导入一个包或包中的模块。例如，import my_package 将导入名为 my_package 的包，这通常会执行包的 __init__。py 文件中的代码。
+要导入包中的模块，可以使用 import my_package.my_module。也可以使用 from... import...语句来导入特定的模块或对象，例如 from my_package import my_module 或 from my_package.my_module import some_function。
+总之，Python 的包和模块概念提供了一种有效的方式来组织和管理代码，提高代码的复用性和可维护性
 
 ## 异常处理
 
