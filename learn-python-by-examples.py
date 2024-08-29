@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-29 11:56:38
+LastEditTime: 2024-08-29 22:44:01
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -331,9 +331,26 @@ def hi():
 
 hi()
 ## 19.模块
-
+import sys
 ## 20.异常处理
+import sys
 
+try:
+    f = open('myfile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err: # 如果发生了错误类型为 OSError 类型的错误就捕获这个错误，并且将错误赋值给 err
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data to an integer.")
+except: # 一个通用的异常捕获块，用于捕获前面没有明确指定的任何其他类型的异常。
+    print("Unexpected error:", sys.exc_info()[0])
+    raise # 重新抛出当前捕获到的异常，以便在更高层次的代码中继续处理这个异常，或者让程序终止并显示完整的错误跟踪信息
+else: # 如果没有异常发生，执行 else 子句中的语句。
+    print('has', len(f.readlines()), 'lines')
+    f.close()
+finally: # 不管是否发生异常，都会执行 finally 子句中的语句。
+   print("Goodbye")
 ## 21.面向对象编程
 
 ## 22.命名空间

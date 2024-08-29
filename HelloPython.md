@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-29 17:48:03
+ * @LastEditTime: 2024-08-29 22:52:27
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -507,6 +507,8 @@ my_package/ # 包my_package  拥有 module1 和 module2 模块，init文件会�
 ```
 
 `__main__.py` 文件通常用作包的入口点，可以在这个文件中执行一些主要的逻辑或者启动应用程序
+### __future__
+__future__ 是一个特殊的模块，它允许你在当前版本的 Python 中使用一些在未来版本中可能成为标准的特性。
 ### 包和模块
 模块 (Module)
 
@@ -543,7 +545,92 @@ my_package/ # 包my_package  拥有 module1 和 module2 模块，init文件会�
 总之，Python 的包和模块概念提供了一种有效的方式来组织和管理代码，提高代码的复用性和可维护性
 
 ## 异常处理
+```py
+try:
+  pass
+except ValueError as e:
+  print(e)
+  pass
+```
+- 首先，执行 try 子句 (在关键字 try 和关键字 except 之间的语句)。
 
+- 如果没有异常发生，忽略 except 子句，try 子句执行后结束。
+
+- 如果在执行 try 子句的过程中发生了异常，那么 try 子句余下的部分将被忽略。如果异常的类型和 except 之后的名称相符，那么对应的 except 子句将被执行。
+
+- 如果一个异常没有与任何的 except 匹配，那么这个异常将会传递给上层的 try 中。
+
+```py
+import sys
+
+try:
+    f = open('myfile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except OSError as err: # 如果发生了错误类型为 OSError 类型的错误就捕获这个错误，并且将错误赋值给 err
+    print("OS error: {0}".format(err))
+except ValueError:
+    print("Could not convert data to an integer.")
+except: # 一个通用的异常捕获块，用于捕获前面没有明确指定的任何其他类型的异常。
+    print("Unexpected error:", sys.exc_info()[0])
+    raise # 重新抛出当前捕获到的异常，以便在更高层次的代码中继续处理这个异常，或者让程序终止并显示完整的错误跟踪信息
+else: # 如果没有异常发生，执行 else 子句中的语句。
+    print(arg, 'has', len(f.readlines()), 'lines')
+    f.close()
+finally: # 不管是否发生异常，都会执行 finally 子句中的语句。
+   print("Goodbye")
+```
+### raise
+raise 唯一的一个参数指定了要被抛出的异常。它必须是一个异常的实例或者是异常的类 (也就是 Exception 的子类)。
+```py
+raise Exception('hello')
+```
+如果你只想知道这是否抛出了一个异常，并不想去处理它，那么一个简单的 raise 语句就可以再次把它抛出。
+```py
+try:
+    raise NameError('HiThere')  # 模拟一个异常。
+except NameError:
+    print('An exception flew by!')
+    raise
+```
+### 自定义异常
+只要继承 Exception 类，就可以定义自己的异常。
+```py
+class MyError(Exception):
+    def __init__(self, value):
+        self.value = value
+    def __str__(self):
+      return repr(self.value)
+
+try:
+  raise MyError('My exception occurred') # 向上抛出错误
+except MyError as e:
+  print(e.value)
+```    
+### with
+
+Python 中的 with 语句用于异常处理，封装了 try…except…finally 编码范式，提高了易用性。
+
+**with xx 其实就等于 try except finally**
+
+with 语句就可以保证诸如文件之类的对象在使用完之后一定会正确的执行他的清理方法
+
+```py
+with open('myfile.txt') as f:
+  for line in f:
+    print(line)
+
+# 这段代码就等于
+
+
+try:
+  f = open('myfile.txt')
+  for line in f:
+    print(line)
+finally:
+  f.close()
+```
+代码执行完毕之后 f 总会关闭，
 ## 面向对象编程
 
 ## 命名空间
