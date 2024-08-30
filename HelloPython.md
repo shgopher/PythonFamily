@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-29 22:52:27
+ * @LastEditTime: 2024-08-30 11:45:18
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -632,7 +632,93 @@ finally:
 ```
 代码执行完毕之后 f 总会关闭，
 ## 面向对象编程
+### 类
+```py
+class MyClass:
+  i = 12345 # 类型属性 
+  def __init__(self,i): # python 的构造函数，即便不写也会自动调用这句话，你可以自定义更多的参数,这里的self 就等于 this，或者go语言中的 当前对象的意思
+    self.i = i
+    self.b = i + ";"
 
+myc = MyClass() # 实例化
+print(myc.i)
+```
+
+类的属性不需要初始化，可以直接使用
+```py
+class MyClass:
+  __ii = 12345 # 私有属性，前面两条下划线就是私有属性，方法也一样， def __ddd(self) 就是私有的 ，不能使用 class实例.__dd() 的方式调用
+  def __init__(self,i):
+    self.i = 12345 # 类型属性 i 并没有初始化，就是直接使用
+```
+### 方法
+跟 go 很像，class 中的方法不是函数，第一个必须是 self，然后才是函数的参数，当然 self 是固定用法，不用这个用 this 都可以
+
+```py
+class MyClass:
+  def dd(self):
+    print("dd")
+```
+### 继承
+```py
+class MyClass(object): # 继承 object 
+```
+```py
+class Parent:
+  name = ''
+  def __init__(self,name):
+    self.name = name
+  def hi(self):
+    print(self.name)
+
+class Child(Parent):
+  def __init__(self,name,year):
+    Parent.__init__(self,name)
+    self.year = year
+  def hi(self):
+    super().hi() # 调用父类的方法 使用super()
+    print(self.year)
+```
+Python 还支持多继承
+```py
+cllass Child(Parent,mother,dad):
+  def __init__(self,name,year):
+    Parent.__init__(self,name)
+    mother.__init__(self,name)
+    dad.__init__(self,name)
+```
+### 类的专用私有方法
+```py
+__init__ : 构造函数，在生成对象时调用
+__del__ : 析构函数，释放对象时使用
+__repr__ : 打印，转换
+__setitem__ : 按照索引赋值
+__getitem__: 按照索引获取值
+__len__: 获得长度
+__cmp__: 比较运算
+__call__: 函数调用
+__add__: 加运算
+__sub__: 减运算
+__mul__: 乘运算
+__truediv__: 除运算
+__mod__: 求余运算
+__pow__: 乘方
+```
+### 运算符重载
+```py
+class Vector:
+  def __init__(self, a, b):
+    self.a = a
+    self.b = b
+  def __str__(self):
+    return 'Vector (%d, %d)' % (self.a, self.b)
+    def __add__(self, other):
+      return Vector(self.a + other.a, self.b + other.b)
+
+v1 = Vector(2,10)
+v2 = Vector(5,-2)
+print(v1 + v2)
+```
 ## 命名空间
 
 ## 作用域

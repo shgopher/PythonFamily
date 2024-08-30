@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-29 22:44:01
+LastEditTime: 2024-08-30 11:46:15
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -352,7 +352,30 @@ else: # 如果没有异常发生，执行 else 子句中的语句。
 finally: # 不管是否发生异常，都会执行 finally 子句中的语句。
    print("Goodbye")
 ## 21.面向对象编程
+class MyClass:
+  i = 12345 # 类型属性 
+  def __init__(self,i): # python 的构造函数，即便不写也会自动调用这句话，你可以自定义更多的参数,这里的self 就等于 this，或者go语言中的 当前对象的意思
+    self.i = i
+    self.b = i + ";"
 
+myc = MyClass() # 实例化
+print(myc.i)
+
+### 21.1 继承
+class Parent:
+  name = ''
+  def __init__(self,name):
+    self.name = name
+  def hi(self):
+    print(self.name)
+
+class Child(Parent):
+  def __init__(self,name,year):
+    Parent.__init__(self,name)
+    self.year = year
+  def hi(self):
+    super().hi() # 调用父类的方法 使用super()
+    print(self.year)
 ## 22.命名空间
 
 ## 23.作用域
