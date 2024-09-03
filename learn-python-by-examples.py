@@ -2,7 +2,7 @@
 Author: shgopher shgopher@gmail.com
 Date: 2024-08-18 11:42:15
 LastEditors: shgopher shgopher@gmail.com
-LastEditTime: 2024-08-30 11:46:15
+LastEditTime: 2024-09-03 23:21:14
 FilePath: /PythonFamily/learn-python-by-examples.py
 Description: 
 
@@ -358,7 +358,7 @@ class MyClass:
     self.i = i
     self.b = i + ";"
 
-myc = MyClass() # 实例化
+myc = MyClass("1") # 实例化
 print(myc.i)
 
 ### 21.1 继承
@@ -383,9 +383,60 @@ class Child(Parent):
 ## 24.输入输出
 
 ## 25.file
-
+import os
+f1 = open("lint.sh", "r")
+st = f1.read(3) 
+print(st)
+f1.close()
 ## 26.os
-
+print(os.getpid())
 ## 27.并发编程
+### 27.1 多线程
+import threading
+import time
 
+def worker():
+    print("Worker thread is running.")
+    time.sleep(2)
+    print("Worker thread finished.")
 
+if __name__ == '__main__':
+    t = threading.Thread(target=worker)
+    t.start()
+    print("Main thread is running.")
+    t.join()
+    print("Main thread finished.")
+
+### 27.2 多进程
+
+import multiprocessing
+import time
+
+def worker():
+    print("Worker process is running.")
+    time.sleep(2)
+    print("Worker process finished.")
+
+if __name__ == '__main__':
+    p = multiprocessing.Process(target=worker)
+    p.start()
+    print("Main process is running.")
+    p.join()
+    print("Main process finished.")
+### 27.3 事件驱动
+
+import asyncio
+
+async def worker():
+    print("Worker coroutine is running.")
+    await asyncio.sleep(2)
+    print("Worker coroutine finished.")
+
+async def main():
+    task = asyncio.create_task(worker())
+    print("Main coroutine is running.")
+    await task
+    print("Main coroutine finished.")
+
+if __name__ == '__main__':
+    asyncio.run(main())

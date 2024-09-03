@@ -2,7 +2,7 @@
  * @Author: shgopher shgopher@gmail.com
  * @Date: 2024-08-18 11:41:33
  * @LastEditors: shgopher shgopher@gmail.com
- * @LastEditTime: 2024-08-30 11:45:18
+ * @LastEditTime: 2024-09-03 23:12:31
  * @FilePath: /PythonFamily/HelloPython.md
  * @Description: 
  * 
@@ -712,22 +712,37 @@ class Vector:
     self.b = b
   def __str__(self):
     return 'Vector (%d, %d)' % (self.a, self.b)
-    def __add__(self, other):
-      return Vector(self.a + other.a, self.b + other.b)
+  def __add__(self, other):
+    return Vector(self.a + other.a, self.b + other.b)
 
 v1 = Vector(2,10)
 v2 = Vector(5,-2)
 print(v1 + v2)
 ```
 ## 命名空间
-
-## 作用域
-
+如果一个内部函数相设置全局变量可以使用 global 来设置
+```py
+def foo():
+  global a 
+```
+> 我个人不建议这么用
 ## 输入输出
+内置函数 input() 读取用户输入
 
-## file
+使用内置函数 open(file，mode) 打开文件，该函数返回文件句柄，然后文件句柄拥有很多内置方法，比如 read()、write()、close() 等等。
+
+```py
+f = open('myfile.txt')
+str = f.read() #读取文件所有内容
+print(str)
+f.close() # 关闭文件句柄
+```
 
 ## os
+Python 提供了很多封装了操作系统功能的 os 模块，如 os、os.path、tempfile、subprocess 等。
 
+比如 os.chmod(path,mode) 就是封装的 chmod 命令，所以很多时候我们可以不直接使用 shell 命令，而是直接使用 Python 去操作。
 ## 并发编程
-
+- treading 多线程编程
+- multiprocessing 多进程编程
+- asyncio 异步编程，基于事件驱动和协程
